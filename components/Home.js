@@ -4,6 +4,7 @@ import { faCircleXmark } from "@fortawesome/free-solid-svg-icons";
 import Movie from "./Movie";
 import "antd/dist/antd.css";
 import styles from "../styles/Home.module.css";
+const fetch = require("node-fetch");
 
 import { useEffect, useState } from "react";
 
@@ -89,8 +90,10 @@ function Home() {
     },
   ];*/
 
+ 
+
   const movies = moviesData.map((data, i) => {
-    const isLiked = likedMovies.some((movie) => movie === data.result.title);
+    const isLiked = likedMovies.some((movie) => movie === data.title);
     return (
       <Movie
         key={i}
